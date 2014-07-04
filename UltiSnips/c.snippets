@@ -20,11 +20,11 @@ ${VISUAL}${0}
 #endif
 endsnippet
 
-snippet inc "#include local header (inc)"
+snippet Inc "#include local header (inc)"
 #include "${1:`!p snip.rv = snip.basename + '.h'`}"
 endsnippet
 
-snippet Inc "#include <> (Inc)"
+snippet inc "#include <> (Inc)"
 #include <${1:.h}>
 endsnippet
 
@@ -39,6 +39,14 @@ endsnippet
 
 snippet main "main() (main)"
 int main(int argc, char *argv[])
+{
+	${VISUAL}${0}
+	return 0;
+}
+endsnippet
+
+snippet mainn "main() (void)"
+int main(void)
 {
 	${VISUAL}${0}
 	return 0;
@@ -74,7 +82,7 @@ else:
 	snip.rv = snip.c`}
 #define $1
 
-${VISUAL}${0}
+${0}
 
 #endif /* end of include guard: $1 */
 
